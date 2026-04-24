@@ -202,7 +202,7 @@ const options = {
         post: {
           tags: ["Auth"],
           summary: "Register user",
-          description: "Creates a user account. Public registration cannot create admin role.",
+          description: "Creates a user account. Public registration can create either user or admin role.",
           requestBody: {
             required: true,
             content: {
@@ -233,7 +233,7 @@ const options = {
               },
             },
             403: {
-              description: "Admin role not allowed from public registration",
+              description: "Forbidden role assignment",
             },
             500: {
               description: "Internal server error",
@@ -659,7 +659,7 @@ const options = {
           responses: {
             201: { description: "User registered successfully" },
             400: { description: "Validation error" },
-            403: { description: "Admin role not allowed from public registration" },
+            403: { description: "Forbidden role assignment" },
             500: { description: "Internal server error" },
           },
         },

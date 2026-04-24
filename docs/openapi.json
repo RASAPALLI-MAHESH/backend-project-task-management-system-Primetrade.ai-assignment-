@@ -226,7 +226,7 @@
           "Auth"
         ],
         "summary": "Register user",
-        "description": "Creates a user account. Public registration cannot create admin role.",
+        "description": "Creates a user account. Public registration can create either user or admin role.",
         "requestBody": {
           "required": true,
           "content": {
@@ -261,7 +261,7 @@
             }
           },
           "403": {
-            "description": "Admin role not allowed from public registration"
+            "description": "Forbidden role assignment"
           },
           "500": {
             "description": "Internal server error"
@@ -1003,7 +1003,7 @@
             "description": "Validation error"
           },
           "403": {
-            "description": "Admin role not allowed from public registration"
+            "description": "Forbidden role assignment"
           },
           "500": {
             "description": "Internal server error"

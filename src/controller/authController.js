@@ -2,12 +2,6 @@ import authService from "../services/authService.js";
 const register = async (req , res) => {
     const { username , password , role} = req.body;
     try { 
-        if (role === "admin") {
-            return res.status(403).json({
-                message: "Admin account creation is not allowed from public registration"
-            });
-        }
-
         const RegisterUser = await authService.Register(username , password , role);
         res.status(201).json(
             {
