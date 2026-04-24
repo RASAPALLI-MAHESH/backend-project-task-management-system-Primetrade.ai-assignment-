@@ -181,9 +181,9 @@ taskRouter.post("/", verifyToken, authorizeRole("admin"), taskController.createT
  *       500:
  *         description: Internal server error
  */
-taskRouter.get("/:id", verifyToken, authorizeRole("admin", "user"), taskController.getTask);
-taskRouter.put("/:id", verifyToken, authorizeRole("admin"), taskController.updateTask);
-taskRouter.delete("/:id", verifyToken, authorizeRole("admin"), taskController.deleteTask);
+taskRouter.get("/:id([0-9a-fA-F]{24})", verifyToken, authorizeRole("admin", "user"), taskController.getTask);
+taskRouter.put("/:id([0-9a-fA-F]{24})", verifyToken, authorizeRole("admin"), taskController.updateTask);
+taskRouter.delete("/:id([0-9a-fA-F]{24})", verifyToken, authorizeRole("admin"), taskController.deleteTask);
 
 // Legacy endpoints kept for current frontend compatibility.
 taskRouter.post("/create", verifyToken, authorizeRole("admin"), taskController.createTask);

@@ -7,22 +7,22 @@ const adminService = {
   },
 
   async getTasks() {
-    const response = await apiClient.get('/tasks/getTasks');
+    const response = await apiClient.get('/tasks');
     return response.data?.tasks || [];
   },
 
   async createTask(payload) {
-    const response = await apiClient.post('/tasks/create', payload);
+    const response = await apiClient.post('/tasks', payload);
     return response.data?.task;
   },
 
   async updateTask(taskId, payload) {
-    const response = await apiClient.put(`/tasks/update/${taskId}`, payload);
+    const response = await apiClient.put(`/tasks/${taskId}`, payload);
     return response.data?.task;
   },
 
   async deleteTask(taskId) {
-    const response = await apiClient.delete(`/tasks/delete/${taskId}`);
+    const response = await apiClient.delete(`/tasks/${taskId}`);
     return response.data?.task;
   },
 };
