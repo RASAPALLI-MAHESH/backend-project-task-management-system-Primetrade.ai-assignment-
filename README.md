@@ -1,4 +1,4 @@
-# 🚀 Full-Stack Task Management System
+#  Full-Stack Task Management System
 
 A production-style full-stack task management system built with Node.js, Express, MongoDB, and React, designed around secure JWT authentication, strict role-based access control, and API versioning.
 
